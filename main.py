@@ -1,9 +1,10 @@
+import requests
 from tkinter import *
 # TODO! 
 # make necessary installations/imports
 
 def get_quote():
-    pass
+   
     # TODO!
     #Write your code here.
     #Make an API call to get a random quote (including exception handling)
@@ -14,11 +15,24 @@ def get_quote():
         # Customize your endpoint and parameters according to the requirements above.  
     #Parse the response object and store the quote and the author in variables called 'quote' and 'author'
 
-    #Pass the quote variable into the canvas via the 'quote' variable.
-    canvas.itemconfig(quote_text, text=quote)
-    #Pass the author variable into the canvas via the 'author' variable.
-    canvas.itemconfig(author_text, text=author)
 
+    response = requests.get("http://api.quotable.io/random")
+
+
+    if response.status_code == 200:
+
+        data = response.json()
+        quote = data['content']
+        author = data['author']
+        print("Quote:", quote)
+        print("Author:", author)
+        #Pass the quote variable into the canvas via the 'quote' variable.
+        canvas.itemconfig(quote_text, text=quote)
+        #Pass the author variable into the canvas via the 'author' variable.
+        canvas.itemconfig(author_text, text=author)
+    else:
+        # If the request was not successful, print the status code
+        print("Failed to retrieve quote. Status code:", response.status_code)
 
 
 window = Tk()
