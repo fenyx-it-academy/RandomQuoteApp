@@ -10,7 +10,7 @@ def get_quote():
     # Requirements of the API call:
         # Make the call to 'http://api.quotable.io'
         # Get 1 random quote at a time
-        # Specify the category as 'wisdom'
+        # Specify a category (check out the documentation to learn more about categories and how to use them)
         # Customize your endpoint and parameters according to the requirements above.  
     #Parse the response object and store the quote and the author in variables called 'quote' and 'author'
 
