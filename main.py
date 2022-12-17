@@ -1,9 +1,22 @@
 from tkinter import *
+import requests
 # TODO! 
 # make necessary installations/imports
 
 def get_quote():
-    pass
+    
+    try:
+        response = requests.get("http://api.quotable.io/random")
+        response.raise_for_status()
+        # Code here will only run if the request is successful
+    except requests.exceptions.TooManyRedirects as error:
+        print(error)
+
+    
+
+    quote = response.json()['content']
+    author = response.json()['author']
+        
     # TODO!
     #Write your code here.
     #Make an API call to get a random quote (including exception handling)
