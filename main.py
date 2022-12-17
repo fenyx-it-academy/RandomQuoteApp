@@ -1,11 +1,24 @@
 from tkinter import *
-# TODO! 
-# make necessary installations/imports
+import requests
 
 def get_quote():
-    pass
+    
+
+    try:
+        r = requests.get("https://api.quotable.io/random?tags=technology,famous-quotes")
+        responsejson=r.json()
+        quote=responsejson["content"]
+        author=responsejson["author"]     
+    except requests.ConnectionError as e:
+        print(e)
+    
+
+
+
+
     # TODO!
     #Write your code here.
+
     #Make an API call to get a random quote (including exception handling)
     # Requirements of the API call:
         # Make the call to 'http://api.quotable.io'
