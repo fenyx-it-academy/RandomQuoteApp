@@ -16,12 +16,11 @@ def get_quote():
     #Parse the response object and store the quote and the author in variables called 'quote' and 'author'
 
 
-    # Make the request to the API
     response = requests.get("http://api.quotable.io/random")
 
-    # Check if the request was successful
+
     if response.status_code == 200:
-        # If the request was successful, parse the response object
+
         data = response.json()
         quote = data['content']
         author = data['author']
