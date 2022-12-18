@@ -1,8 +1,7 @@
 # RandomQuoteApp
 Simple application that generate random quoates throught the Quotable API
-<a>
-    <img src="https://github.com/RamaNahawandi/RandomQuoteApp/blob/main/screenshot%20.jpg?raw=true" alt="screenshot" title="screenshot" align="right" height="60" />
-</a>
+
+<img src="https://github.com/RamaNahawandi/RandomQuoteApp/blob/main/screenshot%20.jpg?raw=true" alt="screenshot" title="screenshot" align="center" width="300" height="414" />
 
 [comment]: <> (## Description)
 
@@ -12,7 +11,7 @@ Simple application that generate random quoates throught the Quotable API
 
 ### Dependencies
 
- Require 
+ Require tkinter and requests modules
 ### Installing
 
 * Clone the repo
