@@ -1,6 +1,5 @@
 from tkinter import *
-# TODO! 
-# make necessary imports for making API calls
+import requests
 
 def get_quote():
     pass
@@ -12,11 +11,16 @@ def get_quote():
         # Specify a category (check out the documentation to learn more about categories and how to use them)
         # Customize your endpoint and parameters according to the requirements above.  
  
-    # <YOUR CODE HERE>    
+    # <YOUR CODE HERE>   
+    
+    response = requests.get("http://api.quotable.io/random?maxLength=50") 
         
     #Parse the response object and store the quote and the author in variables called 'quote' and 'author'
 
-    # <YOUR CODE HERE>    
+    # <YOUR CODE HERE>  
+    
+    author = response.json()["author"]
+    quote = response.json()["content"]  
     
     #Pass the quote variable into the canvas via the 'quote' variable.
     canvas.itemconfig(quote_text, text=quote)
